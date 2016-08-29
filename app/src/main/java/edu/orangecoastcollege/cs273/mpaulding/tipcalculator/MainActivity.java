@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         SeekBar percentSeekBar = (SeekBar) findViewById(R.id.percentSeekBar);
         percentSeekBar.setOnSeekBarChangeListener(seekBarListener);
 
-
     }
 
     private void calculate()
