@@ -9,11 +9,13 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
-    private static final NumberFormat percentFormat = NumberFormat.getPercentInstance();
+
+    private NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+    private NumberFormat percentFormat = NumberFormat.getPercentInstance(Locale.US);
 
     private double billAmount = 0.0;
     private double percent = 0.15;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       // currencyFormat = NumberFormat.getCurrencyInstance(Locale.getDefault());
+        //percentFormat = NumberFormat.getPercentInstance(Locale.getDefault());
 
         amountTextView = (TextView) findViewById(R.id.amountTextView);
         percentTextView = (TextView) findViewById(R.id.percentTextView);
